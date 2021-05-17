@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="gpacal.css" type="text/css" media="(min-width:500px)">
+		<title> GPA Calculator </title>
+		
+	</head>
+	
+	<body>
+		<h1> GPA Calculator </h1>
+		
+		<div class="row">
+			<div class="column">
+			<div class="backdrop1">
+				<table class="tb_1">
+				  <tr>
+					<th class="grade">Grades</th>
+					<th class="points">Points</th>
+					</tr>
+				  <tr>
+					<td>A+</td>
+					<td>4</td>
+				  </tr>
+				  <tr>
+					<td>A</td>
+					<td>4</td>
+				  </tr>
+				  <tr>
+					<td>A-</td>
+					<td>3.7</td>
+				  </tr>
+				  <tr>
+					<td>B+</td>
+					<td>3.3</td>
+				  </tr>
+				  <tr>
+					<td>B</td>
+					<td>3</td>
+				  </tr>
+				  <tr>
+					<td>B-</td>
+					<td>2.7</td>
+				  </tr>
+				  <tr>
+					<td>C+</td>
+					<td>2.3</td>
+				  </tr>
+				  <tr>
+					<td>C</td>
+					<td>2</td>
+				  </tr>
+				  <tr>
+					<td>C-</td>
+					<td>1.7</td>
+				  </tr>
+				  <tr>
+					<td>D+</td>
+					<td>1.3</td>
+				  </tr>
+				  <tr>
+					<td>D</td>
+					<td>1</td>
+				  </tr>
+				  <tr>
+					<td>D-</td>
+					<td>0.7</td>
+				  </tr>
+				  <tr>
+					<td>F</td>
+					<td>0.0</td>
+				  </tr>
+				</table>
+			</div>
+			</div>
+		
+			<div class="column">
+			
+			<form id="caltb" method="post" action="result.php" >
+			
+			<div class="backdrop2">
+
+				<table class="tb_2" name="cal" id="mytable" >
+					  <tr>
+						<th class="subject">Subject</th>
+						<th class="credit">Credit</th>
+						<th class="grade">Grade</th>
+						</tr>
+					
+					  <tr>
+							<td><input type="text" name="Subject[]" ></td>
+							<td><input type="text" name='Credit[]' ></td>
+							<td><select name='Grade[]'>
+								<option value="-">-</option>
+								<option value="A+">A+ </option>
+								<option value="A">A</option>
+								<option value="A-"> A-</option>
+								<option value="B+"> B+ </option>
+								<option value="B"> B </option>
+								<option value="B-"> B- </option>
+								<option value="C+"> C+ </option>
+								<option value="C"> C </option>
+								<option value="C-">C- </option>
+								<option value="D+">D+ </option>
+								<option value="D">D </option>
+								<option value="D-">D- </option>
+								<option value="F">F </option>
+								</select>
+							</td>
+					  </tr>
+					  <tr>
+							<td><input type="text" name='Subject[]' ></td>
+							<td><input type="text" name='Credit[]' ></td>
+							<td><select name='Grade[]'>
+								<option value="-">-</option>
+								<option value="A+">A+ </option>
+								<option value="A">A</option>
+								<option value="A-"> A-</option>
+								<option value="B+"> B+ </option>
+								<option value="B"> B </option>
+								<option value="B-"> B- </option>
+								<option value="C+"> C+ </option>
+								<option value="C"> C </option>
+								<option value="C-">C- </option>
+								<option value="D+">D+ </option>
+								<option value="D">D </option>
+								<option value="D-">D- </option>
+								<option value="F">F </option>
+								</select>
+							</td>
+					  </tr>
+
+					  
+				<tbody id="tbody"></tbody>	
+				</table>
+				<br>
+				<div class="btn1-holder">
+					<div class="btn2-holder">
+						<button class="btn" type="button" onclick="addItem();" >Add Subjects</button>
+						<input class="submit" type="submit" name="submit"  />
+						<button class="btn" type="button" onclick="submitForm();" >Reset</button>
+					</div>					
+				</div>
+				
+				</div>
+				
+				</form>
+			</div>
+		</div>
+		
+		<script>
+				var items = 0;
+				function addItem() {
+					items++;
+			 
+					var html = "<tr>";
+						html += "<td><input type='text' name='Subject[]'></td>"
+						html += "<td><input type='text' name='Credit[]'></td>";
+						html += "<td><select name='Grade[]'><option value='-'>-</option><option value='A+'>A+ </option><option value='A'>A</option><option value='A-'> A-</option><option value='B+'> B+ </option><option value='B'> B </option><option value='B-'> B- </option><option value='C+'> C+ </option><option value='C'> C </option><option value='C-'>C- </option><option value='D+'>D+ </option><option value='D'>D </option><option value='D-'>D- </option><option value='F'>F </option></select></td>";
+					html += "</tr>";
+			 
+					var row = document.getElementById("tbody").insertRow();
+					row.innerHTML = html;
+				}
+				
+				function submitForm() {
+					document.getElementById("caltb").reset();
+				}
+			
+				$("#mytable").submit(function(event){
+				loadAjax();
+				
+				})				
+		</script>
+					
+	</body>
+
+</html>
+
