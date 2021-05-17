@@ -1,0 +1,159 @@
+body {
+	background-color: white;
+	margin-right: 80px;
+	margin-left: 150px;
+}
+
+.WebContainer{
+    width: 100%;
+    height: auto;
+}
+.articles{
+    width:70%;
+    height: auto;
+    margin: auto;
+} 
+h1 {
+	color: #000099;
+	text-align:center;
+	font-family: verdana;
+  	font-size: 300%;
+
+}
+
+
+.btn {
+  border: none;
+  background-color: #003366;
+  color: white ;
+  width:200px;
+  height:40px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit {
+  border: none;
+  background-color: #003366;
+  color: white ;
+  width:200px;
+  height:40px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+* {
+  	box-sizing: border-box;
+}
+
+.row {
+  	margin-left:20px;
+  	margin-right:20px;
+	display: flex;
+  	justify-content: center;
+	padding: 20px;
+}
+ 
+
+@media screen and (max-width: 600px) {
+  .column {
+  		float: left;
+  		width: 50%;
+  		padding: 50px;
+	}
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.backdrop1{
+	background-color: #c1e0ff;
+	height: 500px; 
+	width: 300px;
+	display: flex;
+  	justify-content: center;
+	margin-right: 120px;
+}
+
+.backdrop2{
+	background-color: white;
+	height: 260px; 
+	width: 800px;
+	display: flex;
+  	justify-content: space-between;
+	flex-direction:column;
+	margin-left: 100px;
+}
+
+
+.backdrop2 .btn1-holder{
+	justify-content:flex-end;
+	display:flex;
+	display:inline;
+}
+
+.backdrop2 .btn2-holder{
+	justify-content:flex-end;
+	display:flex;
+	display:inline;
+}
+
+.tb_1{
+	height: 400px; 
+	width: 200px;
+	align-self: center;
+	text-align:center;
+	border: 1px solid black;
+	
+}
+
+.tb_2{
+	
+	width: 90%;
+	text-align:center;
+	border: 1px solid black;
+	
+}
+
+table,th,td{
+	border: 1px solid blue;
+}
+th{
+	background-color: black;
+	color:white;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgrey;
+}
+
+th.grade{
+  width: 40%;
+}
+th.points {
+  width: 60%;
+} 
+
+
+th.subject{
+  width: 50%;
+}
+
+th.grade{
+  width: 25%;
+}
+th.credit {
+  width: 25%;
+} 
+
+
